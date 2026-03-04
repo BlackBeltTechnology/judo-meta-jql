@@ -37,6 +37,25 @@ Key facts:
 - [feature/feature.xml](feature/feature.xml): Eclipse feature descriptor for plugin installation
 - [site/pom.xml](site/pom.xml): P2 update site for Eclipse installation
 
+## Depends on
+
+- [osgi-utils](../../runtime/osgi-utils): runtime/osgi-utils
+
+## Used by
+
+- [judo-jql-ide-eclipse](../../eclipse/judo-jql-ide-eclipse): eclipse/judo-jql-ide-eclipse
+- [judo-meta-expression](../judo-meta-expression): models/judo-meta-expression
+- [judo-meta-expression-asm](../judo-meta-expression-asm): models/judo-meta-expression-asm
+- [judo-meta-expression-esm](../judo-meta-expression-esm): models/judo-meta-expression-esm
+- [judo-meta-expression-psm](../judo-meta-expression-psm): models/judo-meta-expression-psm
+- [judo-meta-jcl](../judo-meta-jcl): models/judo-meta-jcl
+- [judo-meta-script](../judo-meta-script): models/judo-meta-script
+- [judo-platform](../../runtime/judo-platform): runtime/judo-platform
+- [judo-services](../../runtime/judo-services): runtime/judo-services
+- [judo-tatami](../../runtime/judo-tatami): runtime/judo-tatami
+- [judo-tatami-base](../../runtime/judo-tatami-base): runtime/judo-tatami-base
+- [judo-tatami-jsl](../../runtime/judo-tatami-jsl): runtime/judo-tatami-jsl
+
 ## Optional
 
 - [docs/pom.xml](docs/pom.xml): AsciiDoc documentation and PlantUML diagrams
