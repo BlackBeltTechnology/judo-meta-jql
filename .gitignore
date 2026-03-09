@@ -29,6 +29,11 @@
 /**/*.versionsBackup
 /**/*.json-angular
 /**/*$py.class
+.claude/commands/opsx
+.claude/skills/openspec-*.md
+.gemini
+.opencode
+.agent
 .output
 .metadata
 bin/
