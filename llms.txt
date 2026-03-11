@@ -1,0 +1,64 @@
+# judo-meta-jql
+
+> JQL (JUDO Query Language) metamodel — an Xtext-based DSL that defines the grammar, parser, and AST for declarative queries in the JUDO platform.
+
+Key facts:
+- Java 21, Maven 3.9.4 with Tycho 4.0.13 (Eclipse plugin packaging)
+- Multi-module project with 8 submodules across 3 layers: core DSL, OSGi integration, and Eclipse IDE
+- Built on Xtext 2.39.0, Eclipse EMF, ANTLR 3.2.0, and Google Guice
+- Part of the [judo-community](https://github.com/BlackBeltTechnology/judo-community) ecosystem
+- License: Eclipse Public License 2.0 (EPL-2.0)
+
+## Docs
+
+- [README.md](README.md): Project overview, architecture diagrams, JQL expression syntax, and API examples
+- [AGENTS.md](AGENTS.md): Developer guide with build commands, module descriptions, and coding conventions
+- [CONTRIBUTING.md](CONTRIBUTING.md): Development setup, project structure, and troubleshooting
+- [.github/CIFLOW.md](.github/CIFLOW.md): Branching strategy, version numbering, and CI/CD pipeline diagrams
+
+## Modules — Core DSL
+
+- [model/pom.xml](model/pom.xml): Xtext grammar, EMF Ecore model, generated parser, and JqlParser runtime API
+- [model-test/pom.xml](model-test/pom.xml): JUnit 5 tests for parser, grammar validation, and model loading
+
+## Modules — OSGi Integration
+
+- [osgi/pom.xml](osgi/pom.xml): OSGi bundle repackaging with JqlDslModelBundleTracker for runtime model discovery
+- [osgi-itest/pom.xml](osgi-itest/pom.xml): Pax Exam integration tests verifying bundle loading in Apache Karaf
+
+## Modules — Eclipse IDE
+
+- [ide/ide-common/pom.xml](ide/ide-common/pom.xml): Language Server Protocol initialization via Guice
+- [ide/ui/pom.xml](ide/ui/pom.xml): Eclipse editor with content assist, outline view, labels, and quick fixes
+- [ide/feature/feature.xml](ide/feature/feature.xml): Eclipse IDE feature packaging
+
+## Modules — Distribution
+
+- [feature/feature.xml](feature/feature.xml): Eclipse feature descriptor for plugin installation
+- [site/pom.xml](site/pom.xml): P2 update site for Eclipse installation
+
+## Depends on
+
+- [osgi-utils](../../runtime/osgi-utils): OSGi utility library — lifecycle tracking, config monitoring, ranked services
+
+## Used by
+
+- [judo-jql-ide-eclipse](../../eclipse/judo-jql-ide-eclipse): Eclipse plugin for JQL editing with content assist and validation
+- [judo-meta-expression](../judo-meta-expression): Expression metamodel — type-safe numeric, string, temporal, and collection expressions
+- [judo-meta-expression-asm](../judo-meta-expression-asm): Bridges Expression metamodel with ASM for symbolic reference resolution
+- [judo-meta-expression-esm](../judo-meta-expression-esm): Bridges Expression metamodel with ESM for expression evaluation and validation
+- [judo-meta-expression-psm](../judo-meta-expression-psm): Bridges Expression metamodel with PSM for type resolution and measurement support
+- [judo-meta-jcl](../judo-meta-jcl): JCL metamodel — typed expression and statement DSL extending JQL
+- [judo-meta-script](../judo-meta-script): Script metamodel — typed scripting language with ASM/ESM adapters
+- [judo-platform](../../runtime/judo-platform): Model-driven OSGi runtime platform with REST APIs and Karaf deployment
+- [judo-services](../../runtime/judo-services): OSGi runtime services enabling multiple data models in a single Karaf container
+- [judo-tatami](../../runtime/judo-tatami): Model transformation pipeline — ESM/PSM to deployable application artifacts
+- [judo-tatami-base](../../runtime/judo-tatami-base): PSM transformation pipeline — models to schemas, expressions, and configurations
+- [judo-tatami-jsl](../../runtime/judo-tatami-jsl): JSL-to-runtime model transformation engine (PSM, ASM, UI, RDBMS, etc.)
+
+## Optional
+
+- [docs/pom.xml](docs/pom.xml): AsciiDoc documentation and PlantUML diagrams
+- [.github/workflows/build.yml](.github/workflows/build.yml): CI/CD build pipeline
+- [LICENSE.txt](LICENSE.txt): Eclipse Public License 2.0 text
+- [logback-test.xml](logback-test.xml): Shared Logback configuration for test logging
